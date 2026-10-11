@@ -1,0 +1,48 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam linetype ortho
+
+actor "Usuário da API" as Usuario
+
+rectangle "Baozi Store - API REST" {
+    package "Cliente" {
+        usecase "POST\nCriar cliente" as C1
+        usecase "GET\nListar clientes" as C2
+        usecase "GET\nConsultar cliente por ID" as C3
+        usecase "DELETE\nExcluir cliente por ID" as C4
+    }
+
+    package "Produto" {
+        usecase "POST\nCriar produto" as P1
+        usecase "GET\nListar produtos" as P2
+        usecase "GET\nConsultar produto por ID" as P3
+        usecase "DELETE\nExcluir produto por ID" as P4
+    }
+
+    package "Pedido" {
+        usecase "POST\nCriar pedido" as O1
+        usecase "GET\nListar pedidos" as O2
+        usecase "GET\nConsultar pedido por ID" as O3
+        usecase "DELETE\nExcluir pedido por ID" as O4
+    }
+}
+
+Usuario -- C1
+Usuario -- C2
+Usuario -- C3
+Usuario -- C4
+
+Usuario -- P1
+Usuario -- P2
+Usuario -- P3
+Usuario -- P4
+
+Usuario -- O1
+Usuario -- O2
+Usuario -- O3
+Usuario -- O4
+
+@enduml
